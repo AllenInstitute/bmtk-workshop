@@ -1,0 +1,4 @@
+edge_type_id target_query source_query syn_weight dynamics_params delay
+100 ei_type=='e' ei_type=='e' 0.01 dipde_ExcToInh.json 0.002
+101 ei_type=='i' ei_type=='e' 0.005 dipde_ExcToInh.json 0.002
+102 ei_type=='e' ei_type=='i' -0.002 dipde_InhToExc.json 0.002

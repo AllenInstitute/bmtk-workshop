@@ -1,0 +1,7 @@
+node_type_id dynamics_params layer model_type cell_line model_template model_name ei
+100 501282204_glif_lif_asc_config.json VisL4 point_neuron i4Sst nest:glif_lif_asc_psc Sst_501282204 i
+101 314642645_glif_lif_asc_config.json VisL4 point_neuron e4Rorb nest:glif_lif_asc_psc Rorb_314642645 e
+102 517982558_glif_lif_asc_config.json VisL4 point_neuron e4Scnn1a nest:glif_lif_asc_psc Scnn1a_517982558 e
+103 474626527_glif_lif_asc_config.json VisL4 point_neuron i4Htr3a nest:glif_lif_asc_psc Htr3a_474626527 i
+104 483018019_glif_lif_asc_config.json VisL4 point_neuron e4other nest:glif_lif_asc_psc other_483018019 e
+105 478958894_glif_lif_asc_config.json VisL4 point_neuron i4Pvalb nest:glif_lif_asc_psc Pvalb_478958894 i

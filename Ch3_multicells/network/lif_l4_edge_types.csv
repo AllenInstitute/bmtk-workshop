@@ -1,0 +1,5 @@
+edge_type_id target_query source_query syn_weight model_template target_sections distance_range delay dynamics_params
+100 ei_type=='e' ei_type=='e' 0.015 Exp2Syn "['somatic', 'basal', 'apical']" "[30.0, 150.0]" 2.0 AMPA_ExcToExc.json
+101 ei_type=='i' ei_type=='e' 0.015 Exp2Syn "['somatic', 'basal']" "[30.0, 150.0]" 2.0 AMPA_ExcToInh.json
+102 ei_type=='e' ei_type=='i' 0.085 Exp2Syn "['somatic', 'basal', 'apical']" "[0.0, 50.0]" 2.0 GABA_InhToExc.json
+103 ei_type=='i' ei_type=='i' 0.085 Exp2Syn "['somatic', 'basal']" "[0.0, 1e+20]" 2.0 GABA_InhToInh.json

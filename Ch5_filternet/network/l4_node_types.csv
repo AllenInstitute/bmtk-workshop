@@ -1,0 +1,5 @@
+node_type_id model_name model_type ei_type dynamics_params model_template
+100 Scnn1a point_neuron e Scnn1a_515806250_glif_lif_asc.json nest:glif_lif_asc_psc
+101 Rorb point_neuron e Rorb_512332555_glif_lif_asc.json nest:glif_lif_asc_psc
+102 Nr5a1 point_neuron e Nr5a1_587862586_glif_lif_asc.json nest:glif_lif_asc_psc
+103 PValb point_neuron i Pvalb_574058595_glif_lif_asc.json nest:glif_lif_asc_psc

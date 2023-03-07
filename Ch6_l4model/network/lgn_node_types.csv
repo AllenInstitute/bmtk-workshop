@@ -1,0 +1,15 @@
+node_type_id dynamics_params sf_sep non_dom_params model_type subtype model_template model_name location
+100 sON_TF1.json   virtual sON lgnmodel:sON_TF1 sON_TF1 LGN
+101 sON_TF2.json   virtual sON lgnmodel:sON_TF2 sON_TF2 LGN
+102 sON_TF4.json   virtual sON lgnmodel:sON_TF4 sON_TF4 LGN
+103 sON_TF8.json   virtual sON lgnmodel:sON_TF8 sON_TF8 LGN
+104 sOFF_TF1.json   virtual sOFF lgnmodel:sOFF_TF1 sOFF_TF1 LGN
+105 sOFF_TF2.json   virtual sOFF lgnmodel:sOFF_TF2 sOFF_TF2 LGN
+106 sOFF_TF4.json   virtual sOFF lgnmodel:sOFF_TF4 sOFF_TF4 LGN
+107 sOFF_TF8.json   virtual sOFF lgnmodel:sOFF_TF8 sOFF_TF8 LGN
+108 sOFF_TF15.json   virtual sOFF lgnmodel:sOFF_TF15 sOFF_TF15 LGN
+109 tOFF_TF4.json   virtual tOFF lgnmodel:tOFF_TF4 tOFF_TF4 LGN
+110 tOFF_TF8.json   virtual tOFF lgnmodel:tOFF_TF8 tOFF_TF8 LGN
+111 tOFF_TF15.json   virtual tOFF lgnmodel:tOFF_TF15 tOFF_TF15 LGN
+112 sOFF_TF4.json 6.0 sON_TF4.json virtual sONsOFF lgnmodel:sONsOFF_001 sONsOFF_001 LGN
+113 tOFF_TF8.json 4.0 sON_TF4.json virtual sONtOFF lgnmodel:sONtOFF_001 sONtOFF_001 LGN

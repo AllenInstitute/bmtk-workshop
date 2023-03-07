@@ -1,0 +1,3 @@
+node_type_id dynamics_params ei_type model_type model_template
+100 tON_TF8_demo.json e virtual lgnmodel:tON_TF8
+101 tOFF_TF8_demo.json e virtual lgnmodel:tOFF_TF8

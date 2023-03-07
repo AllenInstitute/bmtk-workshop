@@ -1,0 +1,2 @@
+node_type_id model_template ei_type model_type dynamics_params
+100 lgnmodel:tON e virtual tON_TF15.json

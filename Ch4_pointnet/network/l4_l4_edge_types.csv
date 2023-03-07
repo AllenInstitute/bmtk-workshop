@@ -1,0 +1,5 @@
+edge_type_id target_query source_query model_template delay dynamics_params syn_weight
+100 ei_type=='e' ei_type=='e' static_synapse 2.0 static_ExcToExc.json 1.2
+101 ei_type=='i' ei_type=='e' static_synapse 2.0 static_ExcToInh.json 7.5
+102 ei_type=='e' ei_type=='i' static_synapse 2.0 static_InhToExc.json -10.5
+103 ei_type=='i' ei_type=='i' static_synapse 2.0 static_InhToInh.json -2.0

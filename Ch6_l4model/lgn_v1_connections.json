@@ -1,0 +1,142 @@
+{
+  "e4Nr5a1": {
+    "connection_params": {
+      "probability": 1.0,
+      "poissonParameter": 2.0,
+      "sON_ratio": 0.9,
+      "centers_d_min": 4.0,
+      "centers_d_max": 6.0,
+      "ON_OFF_w_min": 7.5,
+      "ON_OFF_w_max": 9.5,
+      "aspectRatio_min": 3.4,
+      "aspectRatio_max": 3.6,
+      "N_syn": 80
+    },
+    "edge_types_params": {
+      "syn_weight": 0.5272113965417778,
+      "delay": 1.7,
+      "dynamics_params": "e2e.json",
+      "model_template": "static_synapse"
+    }
+  },
+  "e4Rorb": {
+    "connection_params": {
+      "probability": 1.0,
+      "poissonParameter": 2.0,
+      "sON_ratio": 0.9,
+      "centers_d_min": 4.0,
+      "centers_d_max": 6.0,
+      "ON_OFF_w_min": 7.5,
+      "ON_OFF_w_max": 9.5,
+      "aspectRatio_min": 3.4,
+      "aspectRatio_max": 3.6,
+      "N_syn": 80
+    },
+    "edge_types_params": {
+      "syn_weight": 0.518666852825,
+      "delay": 1.7,
+      "dynamics_params": "e2e.json",
+      "model_template": "static_synapse"
+    }
+  },
+  "e4Scnn1a": {
+    "connection_params": {
+      "probability": 1.0,
+      "poissonParameter": 2.0,
+      "sON_ratio": 0.9,
+      "centers_d_min": 4.0,
+      "centers_d_max": 6.0,
+      "ON_OFF_w_min": 7.5,
+      "ON_OFF_w_max": 9.5,
+      "aspectRatio_min": 3.4,
+      "aspectRatio_max": 3.6,
+      "N_syn": 80
+    },
+    "edge_types_params": {
+      "syn_weight": 0.5173743580285,
+      "delay": 1.7,
+      "dynamics_params": "e2e.json",
+      "model_template": "static_synapse"
+    }
+  },
+  "e4other": {
+    "connection_params": {
+      "probability": 1.0,
+      "poissonParameter": 2.0,
+      "sON_ratio": 0.9,
+      "centers_d_min": 4.0,
+      "centers_d_max": 6.0,
+      "ON_OFF_w_min": 7.5,
+      "ON_OFF_w_max": 9.5,
+      "aspectRatio_min": 3.4,
+      "aspectRatio_max": 3.6,
+      "N_syn": 80
+    },
+    "edge_types_params": {
+      "syn_weight": 0.5152488843942,
+      "delay": 1.7,
+      "dynamics_params": "e2e.json",
+      "model_template": "static_synapse"
+    }
+  },
+  "i4Htr3a": {
+    "connection_params": {
+      "probability": 0.444,
+      "poissonParameter": 2.0,
+      "sON_ratio": 0.75,
+      "centers_d_min": 6.0,
+      "centers_d_max": 10.0,
+      "ON_OFF_w_min": 8.5,
+      "ON_OFF_w_max": 11.0,
+      "aspectRatio_min": 2.2,
+      "aspectRatio_max": 2.4,
+      "N_syn": 20
+    },
+    "edge_types_params": {
+      "syn_weight": 0.0,
+      "delay": 1.7,
+      "dynamics_params": "i2e.json",
+      "model_template": "static_synapse"
+    }
+  },
+  "i4Pvalb": {
+    "connection_params": {
+      "probability": 1.0,
+      "poissonParameter": 2.0,
+      "sON_ratio": 0.75,
+      "centers_d_min": 6.0,
+      "centers_d_max": 10.0,
+      "ON_OFF_w_min": 10.0,
+      "ON_OFF_w_max": 13.0,
+      "aspectRatio_min": 1.6,
+      "aspectRatio_max": 1.8,
+      "N_syn": 75
+    },
+    "edge_types_params": {
+      "syn_weight": 1.7916764292750003,
+      "delay": 1.7,
+      "dynamics_params": "i2e.json",
+      "model_template": "static_synapse"
+    }
+  },
+  "i4Sst": {
+    "connection_params": {
+      "probability": 0.333,
+      "poissonParameter": 2.0,
+      "sON_ratio": 0.75,
+      "centers_d_min": 6.0,
+      "centers_d_max": 10.0,
+      "ON_OFF_w_min": 8.5,
+      "ON_OFF_w_max": 11.0,
+      "aspectRatio_min": 2.2,
+      "aspectRatio_max": 2.4,
+      "N_syn": 25
+    },
+    "edge_types_params": {
+      "syn_weight": 0.0,
+      "delay": 1.7,
+      "dynamics_params": "i2e.json",
+      "model_template": "static_synapse"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "El_reference": -0.07868976974487304,
+  "C": 8.036205885176887e-11,
+  "asc_amp_array": [
+    -1.3563319075049063e-12,
+    -3.4718443042313956e-11
+  ],
+  "init_threshold": 0.027317242519619103,
+  "threshold_reset_method": {
+    "params": {
+      "a_spike": 0.0826631497539107,
+      "b_spike": 1247.7629278951222
+    },
+    "name": "three_components"
+  },
+  "th_inf": 0.027317242519619103,
+  "spike_cut_length": 34,
+  "init_AScurrents": [
+    0.0,
+    0.0
+  ],
+  "init_voltage": 0.0,
+  "threshold_dynamics_method": {
+    "params": {
+      "b_voltage": 0,
+      "a_spike": 0.0826631497539107,
+      "b_spike": 1247.7629278951222,
+      "a_voltage": 0
+    },
+    "name": "spike_component"
+  },
+  "voltage_reset_method": {
+    "params": {
+      "a": -0.0686957905773563,
+      "b": 0.02456639266712398
+    },
+    "name": "v_before"
+  },
+  "extrapolation_method_name": "endpoints",
+  "dt": 5e-05,
+  "voltage_dynamics_method": {
+    "params": {},
+    "name": "linear_forward_euler"
+  },
+  "El": 0.0,
+  "asc_tau_array": [
+    0.3333333333333333,
+    0.01
+  ],
+  "R_input": 110326136.40548335,
+  "AScurrent_dynamics_method": {
+    "params": {},
+    "name": "none"
+  },
+  "AScurrent_reset_method": {
+    "params": {},
+    "name": "none"
+  },
+  "dt_multiplier": 10,
+  "th_adapt": null,
+  "coeffs": {
+    "a": 1,
+    "C": 1,
+    "b": 1,
+    "G": 1,
+    "th_inf": 1.2603379743764749,
+    "asc_amp_array": [
+      1.0,
+      1.0
+    ]
+  },
+  "type": "GLIF"
+}

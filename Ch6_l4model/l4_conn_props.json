@@ -1,0 +1,114 @@
+{
+  "e4-e4": {
+    "A_literature": 0.243,
+    "R0": 75.0,
+    "sigma": 114.0,
+    "B_ratio": 0.5,
+    "nsyn_range": [3, 8]
+  },
+  "e4-i4P": {
+    "A_literature": 0.43,
+    "R0": 75.0,
+    "sigma": 92.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "e4-i4S": {
+    "A_literature": 0.571,
+    "R0": 75.0,
+    "sigma": 103.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "e4-i4H": {
+    "A_literature": 0.571,
+    "R0": 75.0,
+    "sigma": 103.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4P-e4": {
+    "A_literature": 0.437,
+    "R0": 75.0,
+    "sigma": 95.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4P-i4P": {
+    "A_literature": 0.451,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4P-i4S": {
+    "A_literature": 0.03,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4P-i4H": {
+    "A_literature": 0.22,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4S-e4": {
+    "A_literature": 0.351,
+    "R0": 75.0,
+    "sigma": 85.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4S-i4P": {
+    "A_literature": 0.857,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4S-i4S": {
+    "A_literature": 0.082,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4S-i4H": {
+    "A_literature": 0.77,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4H-e4": {
+    "A_literature": 0.351,
+    "R0": 75.0,
+    "sigma": 85.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4H-i4P": {
+    "A_literature": 0.02,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4H-i4S": {
+    "A_literature": 0.625,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  },
+  "i4H-i4H": {
+    "A_literature": 0.028,
+    "R0": 75.0,
+    "sigma": 120.0,
+    "B_ratio": null,
+    "nsyn_range": [3, 8]
+  }
+}

@@ -1,0 +1,7 @@
+edge_type_id target_query source_query dynamics_params syn_weight model_template delay weight_function
+100 model_name=='Sst_501282204' * i2e.json 0.0 static_synapse 1.7 set_syn_weight
+101 model_name=='Rorb_314642645' * e2e.json 0.518666852825 static_synapse 1.7 set_syn_weight
+102 model_name=='Scnn1a_517982558' * e2e.json 0.5173743580285 static_synapse 1.7 set_syn_weight
+103 model_name=='Htr3a_474626527' * i2e.json 0.0 static_synapse 1.7 set_syn_weight
+104 model_name=='other_483018019' * e2e.json 0.5152488843942 static_synapse 1.7 set_syn_weight
+105 model_name=='Pvalb_478958894' * i2e.json 1.7916764292750003 static_synapse 1.7 set_syn_weight
