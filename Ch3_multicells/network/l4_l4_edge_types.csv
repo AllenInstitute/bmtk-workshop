@@ -1,5 +1,5 @@
-edge_type_id target_query source_query model_template dynamics_params delay syn_weight
-100 ei_type=='e' ei_type=='e' Exp2Syn AMPA_ExcToExc.json 2.0 3e-05
-101 ei_type=='i' ei_type=='e' Exp2Syn AMPA_ExcToInh.json 2.0 0.0006
-102 ei_type=='e' ei_type=='i' Exp2Syn GABA_InhToExc.json 2.0 0.07
-103 ei_type=='i' ei_type=='i' Exp2Syn GABA_InhToInh.json 2.0 0.00015
+edge_type_id target_query source_query syn_weight dynamics_params delay model_template
+100 ei_type=='e' ei_type=='e' 3e-05 AMPA_ExcToExc.json 2.0 Exp2Syn
+101 ei_type=='i' ei_type=='e' 0.0006 AMPA_ExcToInh.json 2.0 Exp2Syn
+102 ei_type=='e' ei_type=='i' 0.07 GABA_InhToExc.json 2.0 Exp2Syn
+103 ei_type=='i' ei_type=='i' 0.00015 GABA_InhToInh.json 2.0 Exp2Syn
