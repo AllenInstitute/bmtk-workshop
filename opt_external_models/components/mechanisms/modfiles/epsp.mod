@@ -55,7 +55,7 @@ FUNCTION myexp(x) {
 	}
 }
 
-FUNCTION curr(x (ms)) (nA) {				
+FUNCTION curr(x) {				
 	tpeak=tau0*tau1*log(tau0/tau1)/(tau0-tau1)
 	adjust=1/((1-myexp(-tpeak/tau0))-(1-myexp(-tpeak/tau1)))
 	amp=adjust*imax

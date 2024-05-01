@@ -4,7 +4,7 @@
 NEURON	{
 	SUFFIX Ih
 	NONSPECIFIC_CURRENT ihcn
-	RANGE gIhbar, gIh, ihcn 
+	RANGE gbar, g, ihcn, shift1, shift2, shift3, shift4, shift5, shift6
 }
 
 UNITS	{
@@ -14,28 +14,34 @@ UNITS	{
 }
 
 PARAMETER	{
-	gIhbar = 0.00001 (S/cm2) 
-	ehcn =  -45.0 (mV)
+	gbar = 0.00001 (S/cm2)
+	ehcn = -45.0 (mV)
+	shift1 = 154.9
+	shift2 = 11.9
+	shift3 = 0
+	shift4 = 33.1
+	shift5 = 6.43
+	shift6 = 193
 }
 
 ASSIGNED	{
 	v	(mV)
 	ihcn	(mA/cm2)
-	gIh	(S/cm2)
+	g	(S/cm2)
 	mInf
-	mTau    (ms)
+	mTau
 	mAlpha
 	mBeta
 }
 
-STATE	{ 
+STATE	{
 	m
 }
 
 BREAKPOINT	{
 	SOLVE states METHOD cnexp
-	gIh = gIhbar*m
-	ihcn = gIh*(v-ehcn)
+	g = gbar*m
+	ihcn = g*(v-ehcn)
 }
 
 DERIVATIVE states	{
@@ -50,11 +56,17 @@ INITIAL{
 
 PROCEDURE rates(){
 	UNITSOFF
-        if(v == -154.9){
-            v = v + 0.0001
-        }
-		mAlpha =  0.001*6.43*(v+154.9)/(exp((v+154.9)/11.9)-1)
-		mBeta  =  0.001*193*exp(v/33.1)
+				if(v == -shift1){
+						v = v + 0.0001
+				}
+				if(shift4 == 0){
+						shift4 = shift4 + 0.0001
+				}
+				if(shift2 == 0){
+						shift2 = shift2 + 0.0001
+				}
+		mAlpha =  0.001*(shift5)*(v+shift1)/(exp((v+shift1)/(shift2))-1)
+		mBeta  =  0.001*(shift6)*exp((v+shift3)/(shift4))
 		mInf = mAlpha/(mAlpha + mBeta)
 		mTau = 1/(mAlpha + mBeta)
 	UNITSON

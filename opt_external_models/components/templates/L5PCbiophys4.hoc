@@ -32,7 +32,7 @@ proc biophys() {
 		ek = -85
 		ena = 50
     insert Ih
-  	gIhbar_Ih = 0.0001 
+  	gbar_Ih = 0.0001 
 		g_pas = 3e-5
   	gImbar_Im = 0.013322 
   	decay_CaDynamics_E2 = 277.300774 
@@ -58,7 +58,7 @@ proc biophys() {
 		ek = -85
 		ena = 50
     insert Ih
-  	gIhbar_Ih = 0.0001 
+  	gbar_Ih = 0.0001 
 		g_pas = 3e-5
   	gImbar_Im = 0.000008 
   	decay_CaDynamics_E2 = 294.679571 
@@ -92,12 +92,12 @@ proc biophys() {
   	gImbar_Im = 0.00099 
 	}
 
-	$o1.distribute_channels("apic","gIhbar_Ih",2,-0.8696,3.6161,0.0,2.0870,0.00010000000) 
+	$o1.distribute_channels("apic","gbar_Ih",2,-0.8696,3.6161,0.0,2.0870,0.00010000000) 
   $o1.distribute_channels("apic","gCa_LVAstbar_Ca_LVAst",3,1.000000,0.010000,700.000000,900.000000,0.1419540000) 
 	
   forsec $o1.basal {
     insert Ih
-  	gIhbar_Ih = 0.0001 
+  	gbar_Ih = 0.0001 
 		cm = 2
 		g_pas = 6e-5
 	}

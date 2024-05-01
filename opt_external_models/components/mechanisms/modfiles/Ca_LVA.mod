@@ -1,7 +1,7 @@
-: Comment: LVA ca channel. Note: mtau is an approximation from the plots
-: Reference:		Avery and Johnston 1996, tau from Randall 1997
-: Comment: shifted by -10 mv to correct for junction potential
-: Comment: corrected rates using q10 = 2.3, target temperature 34, orginal 21
+:Comment : LVA ca channel. Note: mtau is an approximation from the plots
+:Reference : :		Avery and Johnston 1996, tau from Randall 1997
+:Comment: shifted by -10 mv to correct for junction potential
+:Comment: corrected rates using q10 = 2.3, target temperature 34, orginal 21
 
 NEURON	{
 	SUFFIX Ca_LVA
@@ -24,7 +24,6 @@ ASSIGNED	{
 	eca	(mV)
 	ica	(mA/cm2)
 	g	(S/cm2)
-	celsius (degC)
 	mInf
 	mTau
 	hInf
@@ -56,7 +55,7 @@ INITIAL{
 
 PROCEDURE rates(){
   LOCAL qt
-  qt = 2.3^((celsius-21)/10)
+  qt = 2.3^((34-21)/10)
 
 	UNITSOFF
 		v = v + 10

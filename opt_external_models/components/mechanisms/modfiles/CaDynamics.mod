@@ -31,7 +31,7 @@ INITIAL {
 
 STATE	{
 	cai (mM)
-}
+	}
 
 BREAKPOINT	{ SOLVE states METHOD cnexp }
 

@@ -1,4 +1,5 @@
-: Comment: Kv3-like potassium current
+:Comment :
+:Reference : :		Characterization of a Shaw-related potassium channel family in rat brain, The EMBO Journal, vol.11, no.7,2473-2486 (1992)
 
 NEURON	{
 	SUFFIX Kv3_1
@@ -13,7 +14,7 @@ UNITS	{
 }
 
 PARAMETER	{
-	gbar = 0.00001 (S/cm2)
+	gbar = 0.00001 (S/cm2) 
 	vshift = 0 (mV)
 }
 
