@@ -1,0 +1,2 @@
+edge_type_id target_query source_query model_template syn_weight distance_range target_sections delay dynamics_params
+100 * * Exp2Syn 0.01 "[0.0, 1e+20]" "['soma', 'dend']" 2.0 AMPA_ExcToExc.json
