@@ -1,0 +1,2 @@
+edge_type_id target_query source_query dynamics_params syn_weight model_template delay
+100 * * tsodyks2.syn_exc.json 2.0 tsodyks2_synapse 1.5
