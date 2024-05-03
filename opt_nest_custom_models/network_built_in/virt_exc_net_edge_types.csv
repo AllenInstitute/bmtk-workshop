@@ -1,2 +1,2 @@
-edge_type_id target_query source_query model_template dynamics_params syn_weight delay
-100 * * static_synapse ExcToInh.json 2.0 1.0
+edge_type_id target_query source_query dynamics_params delay model_template syn_weight
+100 * * ExcToInh.json 1.0 static_synapse 2.0

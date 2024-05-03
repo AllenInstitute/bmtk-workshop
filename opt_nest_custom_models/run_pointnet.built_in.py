@@ -1,5 +1,4 @@
 import os, sys
-
 from bmtk.simulator import pointnet
 
 

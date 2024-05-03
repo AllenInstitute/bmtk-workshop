@@ -1,2 +1,2 @@
-node_type_id model_template dynamics_params model_type
-100 nest:izhikevich custom_model_params.default.json point_neuron
+node_type_id dynamics_params model_template model_type
+100 custom_model_params.default.json nest:izhikevich point_neuron

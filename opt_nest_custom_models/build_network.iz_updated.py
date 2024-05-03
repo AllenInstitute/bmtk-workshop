@@ -1,19 +1,17 @@
 import numpy as np
 from bmtk.builder import NetworkBuilder
 
-# nest_model = 'nest:iaf_psc_delta'
 nest_model = 'nest:izhikevich'
-# nest_model = 'nest:aeif_cond_alpha'
-# nest_model = 'nest:glif_psc'
-dynamics_params = 'custom_model_params.default.json'
+dynamics_params = 'custom_model_params.izhikevich.json'
 
 
 net = NetworkBuilder('net')
 net.add_nodes(
-    N=100,
+    N=10,
     model_type='point_neuron',
     model_template=nest_model,
-    dynamics_params=dynamics_params
+    dynamics_params=dynamics_params,
+    jitter=np.random.uniform(0.5, 1.5, 10)
 )
 
 net.add_edges(
@@ -26,7 +24,7 @@ net.add_edges(
 )
 
 net.build()
-net.save(output_dir='network_built_in')
+net.save(output_dir='network_iz_updated')
 
 
 virt_exc = NetworkBuilder('virt_exc')
@@ -45,4 +43,4 @@ virt_exc.add_edges(
 )
 
 virt_exc.build()
-virt_exc.save(output_dir='network_built_in')
+virt_exc.save(output_dir='network_iz_updated')
