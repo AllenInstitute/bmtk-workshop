@@ -18,3 +18,4 @@ Ch5_filternet/inputs/log.txt
 Ch5_filternet/inputs/rates.*.h5
 Ch5_filternet/inputs/spikes.*.csv
 Ch5_filternet/inputs/config*json
+ephys_inputs/
