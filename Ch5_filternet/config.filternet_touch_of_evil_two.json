@@ -22,7 +22,7 @@
   },
 
   "run": {
-    "tstop": 3000.0,
+    "tstop": 29700.0,
     "dt": 0.1
   },
 
@@ -35,7 +35,7 @@
     "full_field_flash": {
       "input_type": "movie",
       "module": "movie",
-      "data_file": "./movies/ns_movie.8images.npz",
+      "data_file": "natural_movie_two.29700ms.120x240.npz",
       "frame_rate": 1000.0
     }
   },
@@ -43,8 +43,8 @@
   "output":{
     "log_file": "log.txt",
     "output_dir": "$OUTPUT_DIR",
-    "rates_h5": "rates.ns_movie.h5",
-    "spikes_file_csv": "spikes.ns_movie.csv",
-    "spikes_file": "spikes.ns_movie.h5"
+    "rates_h5": "rates.touch_of_evil_two.h5",
+    "spikes_file_csv": "spikes.touch_of_evil_two.csv",
+    "spikes_file": "spikes.touch_of_evil_two.h5"
   }
 }
