@@ -28,7 +28,12 @@
   },
   "components": {
     "filter_models_dir": "$COMPONENTS_DIR/filter_models",
-    "templates_dir": "$COMPONENTS_DIR/templates",
+    "templates_dir": [
+      "$COMPONENTS_DIR/templates/L5PCbiophys4.hoc", 
+      "$COMPONENTS_DIR/templates/Biophys.hoc", 
+      "$COMPONENTS_DIR/templates/HNTemplate.hoc", 
+      "$COMPONENTS_DIR/templates/L5PCtemplate.hoc"
+    ],
     "biophysical_neuron_models_dir": "$COMPONENTS_DIR/biophysical_neuron_models",
     "mechanisms_dir": "$COMPONENTS_DIR/mechanisms",
     "synaptic_models_dir": "$COMPONENTS_DIR/synaptic_models",
