@@ -1,9 +1,9 @@
 {
     "manifest": {
       "$BASE_DIR": ".",
-      "$OUTPUT_DIR": "$BASE_DIR/output_current_clamp",
+      "$OUTPUT_DIR": "$BASE_DIR/output_csv_series",
       "$INPUT_DIR": "$BASE_DIR/inputs",
-      "$NETWORK_DIR": "$BASE_DIR/network_csv_series",
+      "$NETWORK_DIR": "$BASE_DIR/network_current_clamp",
       "$COMPONENT_DIR": "$BASE_DIR/components"
     },
   
