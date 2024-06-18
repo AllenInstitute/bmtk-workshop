@@ -1,6 +1,6 @@
 {
   "manifest": {
-    "$BASE_DIR": "/home/kael/Workspace/scratch/bmtk-workshop/Ch5_filternet",
+    "$BASE_DIR": ".",
     "$OUTPUT_DIR": "$BASE_DIR/inputs",
     "$NETWORK_DIR": "$BASE_DIR/network",
     "$COMPONENTS_DIR": "$BASE_DIR/components"
