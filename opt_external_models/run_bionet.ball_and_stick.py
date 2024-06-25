@@ -1,4 +1,4 @@
-"""Simulates an example network of 450 cell receiving two kinds of exernal input as defined in the configuration file"""
+"""Simulates an example network of 450 cells receiving two kinds of external input as defined in the configuration file"""
 import os
 import sys
 from bmtk.simulator import bionet
