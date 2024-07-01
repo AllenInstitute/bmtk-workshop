@@ -25,6 +25,10 @@ RUN conda install jupyterlab
 
 RUN pip install scikit-image
 
+RUN pip install neo 
+
+RUN pip install quantities
+
 RUN cd ${BUILD_DIR} \
     && git clone --branch ${GIT_BRANCH} ${GIT_REPO} \
     && cd bmtk \

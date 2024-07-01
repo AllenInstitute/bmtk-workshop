@@ -7,6 +7,8 @@
 **/output*/
 .idea
 dist/*
+.DS_Store
+**/.DS_Store
 Ch2_single_cell/my_compartment_report.h5
 Ch6_l4model/inputs/config.*.json
 Ch6_l4model/inputs/log.txt
