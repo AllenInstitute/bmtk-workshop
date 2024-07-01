@@ -1,0 +1,2 @@
+node_type_id morphology model_name model_template ei model_type dynamics_params model_processing
+100 Scnn1a_473845048_m.swc Pyr ctdb:Biophys1.hoc e biophysical 472363762_fit.json aibs_perisomatic
