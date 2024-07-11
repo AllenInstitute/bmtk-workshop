@@ -1,2 +1,2 @@
-edge_type_id target_query source_query dynamics_params distance_range model_template delay syn_weight target_sections
-100 ei=='e'&layer=='L4' * AMPA_ExcToExc.json "[0.0, 50.0]" Exp2Syn 2.0 0.00041 "['basal', 'apical', 'somatic']"
+edge_type_id target_query source_query delay syn_weight dynamics_params model_template distance_range target_sections
+100 ei=='e'&layer=='L4' * 2.0 0.00041 AMPA_ExcToExc.json Exp2Syn "[0.0, 50.0]" "['basal', 'apical', 'somatic']"
