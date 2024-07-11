@@ -92,9 +92,9 @@ cortcol.add_nodes(
     x=x,
     y=y,
     z=z,
-    rotation_angle_xaxis=0,
+    rotation_angle_xaxis=[0]*20,
     rotation_angle_yaxis=np.random.uniform(0.0, 2 * np.pi, size=20),
-    rotation_angle_zaxis=-3.646878266,
+    rotation_angle_zaxis=[3.646878266]*20,
 
     tuning_angle=np.linspace(start=0.0, stop=360.0, num=20, endpoint=False),
     layer='L23',
@@ -117,9 +117,9 @@ cortcol.add_nodes(
     x=x,
     y=y,
     z=z,
-    rotation_angle_xaxis=0,
+    rotation_angle_xaxis=[0]*20,
     rotation_angle_yaxis=np.random.uniform(0.0, 2 * np.pi, size=20),
-    rotation_angle_zaxis=-3.646878266,
+    rotation_angle_zaxis=[3.646878266]*20,
 
     tuning_angle=np.linspace(start=0.0, stop=360.0, num=20, endpoint=False),
     layer='L4',
@@ -139,9 +139,9 @@ cortcol.add_nodes(
     x=x,
     y=y,
     z=z,
-    rotation_angle_xaxis=0,
+    rotation_angle_xaxis=[0]*20,
     rotation_angle_yaxis=np.random.uniform(0.0, 2 * np.pi, size=20),
-    rotation_angle_zaxis=-3.646878266,
+    rotation_angle_zaxis=[3.646878266]*20,
 
     tuning_angle=np.linspace(start=0.0, stop=360.0, num=20, endpoint=False),
     layer='L5',
@@ -162,7 +162,7 @@ cortcol.add_nodes(
     z=z,
     rotation_angle_xaxis=np.random.uniform(0.0, 2*np.pi, size=20),
     rotation_angle_yaxis=np.random.uniform(0.0, 2*np.pi, size=20),
-    rotation_angle_zaxis=-2.539551891,
+    rotation_angle_zaxis=[2.539551891]*20,
     model_name='Pvalb',
     ei='i'
 )
