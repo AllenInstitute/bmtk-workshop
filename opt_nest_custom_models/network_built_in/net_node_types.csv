@@ -1,0 +1,2 @@
+node_type_id dynamics_params model_template model_type
+100 custom_model_params.default.json nest:izhikevich point_neuron

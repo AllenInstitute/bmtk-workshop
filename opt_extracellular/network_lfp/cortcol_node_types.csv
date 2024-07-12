@@ -1,0 +1,5 @@
+node_type_id layer model_template model_name model_type morphology ei model_processing dynamics_params
+100 L23 ctdb:Biophys1.hoc Scnn1a biophysical Scnn1a_485510712_morphology.swc e aibs_perisomatic Scnn1a_485510712_params.json
+101 L4 ctdb:Biophys1.hoc Scnn1a biophysical Scnn1a_485510712_morphology.swc e aibs_perisomatic Scnn1a_485510712_params.json
+102 L5 ctdb:Biophys1.hoc Scnn1a biophysical Scnn1a_485510712_morphology.swc e aibs_perisomatic Scnn1a_485510712_params.json
+103 NULL ctdb:Biophys1.hoc Pvalb biophysical Pvalb_473862421_morphology.swc i aibs_perisomatic Pvalb_473862421_params.json

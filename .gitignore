@@ -1,3 +1,4 @@
+**/__pycache__/
 **/x86_64/*
 **/.ipynb_checkpoints/
 **/movies/
@@ -6,6 +7,8 @@
 **/output*/
 .idea
 dist/*
+.DS_Store
+**/.DS_Store
 Ch2_single_cell/my_compartment_report.h5
 Ch6_l4model/inputs/config.*.json
 Ch6_l4model/inputs/log.txt
@@ -17,3 +20,4 @@ Ch5_filternet/inputs/log.txt
 Ch5_filternet/inputs/rates.*.h5
 Ch5_filternet/inputs/spikes.*.csv
 Ch5_filternet/inputs/config*json
+ephys_inputs/

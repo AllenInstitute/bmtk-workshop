@@ -1,0 +1,2 @@
+node_type_id g_pas model_template model_type e_pas
+100 0.001 python:loadBAS biophysical -65

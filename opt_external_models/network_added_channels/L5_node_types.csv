@@ -1,0 +1,2 @@
+node_type_id model_type model_processing morphology model_template
+100 biophysical add_channels cell3.asc hoc:L5PCtemplate

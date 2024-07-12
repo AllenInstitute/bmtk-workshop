@@ -35,7 +35,7 @@
     "full_field_flash": {
       "input_type": "movie",
       "module": "movie",
-      "data_file": "./movies/ns_movie.8images.npy",
+      "data_file": "./movies/ns_movie.8images.npz",
       "frame_rate": 1000.0
     }
   },
