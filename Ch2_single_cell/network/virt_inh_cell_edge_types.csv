@@ -1,2 +1,2 @@
-edge_type_id target_query source_query syn_weight model_template dynamics_params delay
-100 * * 0.008 Exp2Syn GABA_InhToExc.json 2.0
+edge_type_id target_query source_query syn_weight dynamics_params delay model_template
+100 * * 0.005 GABA_InhToExc.json 2.0 Exp2Syn
