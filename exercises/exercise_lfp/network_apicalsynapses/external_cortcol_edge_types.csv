@@ -1,0 +1,2 @@
+edge_type_id target_query source_query target_sections model_template dynamics_params distance_range delay syn_weight
+100 ei=='e'&layer=='VisL4' * "['basal', 'apical', 'somatic']" Exp2Syn AMPA_ExcToExc.json "[0.0, 50.0]" 2.0 0.00041
