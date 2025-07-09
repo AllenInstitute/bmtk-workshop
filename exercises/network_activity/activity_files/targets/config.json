@@ -1,0 +1,112 @@
+{
+  "network": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/circuit_config.json",
+  "simulation": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/simulation_config.json",
+  "config_path": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/config.json",
+  "config_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output",
+  "components": {
+    "mechanisms_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/components/mechanisms",
+    "filter_models_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/components/filter_models",
+    "morphologies_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/components/morphologies",
+    "__pycache___dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/components/__pycache__",
+    "synaptic_models_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/components/synaptic_models",
+    "biophysical_neuron_models_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/components/biophysical_neuron_models",
+    "templates_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/components/templates",
+    "point_neuron_models_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/components/point_neuron_models"
+  },
+  "networks": {
+    "nodes": [
+      {
+        "node_types_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input1_node_types.csv",
+        "nodes_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input1_nodes.h5"
+      },
+      {
+        "node_types_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input3_node_types.csv",
+        "nodes_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input3_nodes.h5"
+      },
+      {
+        "node_types_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input2_node_types.csv",
+        "nodes_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input2_nodes.h5"
+      },
+      {
+        "node_types_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/bneuron_node_types.csv",
+        "nodes_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/bneuron_nodes.h5"
+      }
+    ],
+    "edges": [
+      {
+        "edges_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input3_bneuron_edges.h5",
+        "edge_types_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input3_bneuron_edge_types.csv"
+      },
+      {
+        "edges_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input2_bneuron_edges.h5",
+        "edge_types_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input2_bneuron_edge_types.csv"
+      },
+      {
+        "edge_types_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input1_bneuron_edge_types.csv",
+        "edges_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/network/input1_bneuron_edges.h5"
+      }
+    ],
+    "gap_juncs": []
+  },
+  "target_simulator": "NEURON",
+  "run": {
+    "tstart": 0.0,
+    "tstop": 3000.0,
+    "dt": 0.01,
+    "dL": 20.0,
+    "spike_threshold": -15.0,
+    "nsteps_block": 5000
+  },
+  "conditions": {
+    "celsius": 34.0,
+    "v_init": -80.0
+  },
+  "inputs": {
+    "input1_spikes": {
+      "input_type": "spikes",
+      "module": "sonata",
+      "input_file": "/Users/elena.westeinde/Code/bmtk/activity_files/inputs/input1_spikes.h5",
+      "node_set": "input1"
+    },
+    "input2_spikes": {
+      "input_type": "spikes",
+      "module": "sonata",
+      "input_file": "/Users/elena.westeinde/Code/bmtk/activity_files/inputs/input2_spikes.h5",
+      "node_set": "input2"
+    },
+    "input3_spikes": {
+      "input_type": "spikes",
+      "module": "sonata",
+      "input_file": "/Users/elena.westeinde/Code/bmtk/activity_files/inputs/input3_spikes.h5",
+      "node_set": "input3"
+    }
+  },
+  "output": {
+    "log_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/output/log.txt",
+    "output_dir": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/output",
+    "spikes_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/output/spikes.h5"
+  },
+  "reports": {
+    "v_report": {
+      "variable_name": "v",
+      "cells": "all",
+      "module": "membrane_report",
+      "sections": "soma"
+    },
+    "cai_report": {
+      "variable_name": "cai",
+      "cells": "all",
+      "module": "membrane_report",
+      "sections": "soma"
+    }
+  },
+  "node_sets_file": "/Users/elena.westeinde/Code/bmtk/activity_files/test_output/node_sets.json",
+  "node_sets": {
+    "biophysical_nodes": {
+      "model_type": "biophysical"
+    },
+    "point_nodes": {
+      "model_type": "point_process"
+    }
+  }
+}
