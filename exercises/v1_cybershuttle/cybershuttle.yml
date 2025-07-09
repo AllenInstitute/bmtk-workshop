@@ -1,0 +1,38 @@
+project:
+  name: "Bio-realistic multiscale simulations of cortical circuits"
+  description: "Running the AllenAI V1 model, with thalamacortical (LGN) and background (BKG) inputs"
+  homepage: https://github.com/LHGreen/V1_example
+  authors:
+    - Anton Arkhipov
+    - Laura Green
+  tags:
+    - neurodata25
+    - allenai
+    - visual_cortex
+
+workspace:
+  resources:
+    min_cpu: 4
+    min_gpu: 0
+    min_mem: 0
+    gpu_mem: 1024
+  model_collection:
+    - source: cybershuttle
+      identifier: allenai-v1
+      mount_point: /cybershuttle_data/allenai-v1
+  data_collection: []
+
+additional_dependencies:
+  modules: []
+  conda:
+    - python=3.10
+    - pip
+    - ipywidgets
+    - numpy
+    - pandas
+    - seaborn
+    - matplotlib
+    - nest-simulator
+    - kaeldai::bmtk
+  pip:
+    - sonata
