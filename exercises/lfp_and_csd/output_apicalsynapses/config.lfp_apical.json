@@ -1,0 +1,70 @@
+{
+  "target_simulator": "NEURON",
+  "run": {
+    "tstart": 0.0,
+    "tstop": 3000.0,
+    "dt": 0.1,
+    "dL": 20.0,
+    "spike_threshold": -15.0,
+    "nsteps_block": 5000
+  },
+  "conditions": {
+    "celsius": 34.0,
+    "v_init": -80.0
+  },
+  "inputs": {
+    "virt_exc_spikes": {
+      "input_type": "spikes",
+      "module": "sonata",
+      "input_file": "./inputs/virt_spikes.h5",
+      "node_set": "external"
+    }
+  },
+  "components": {
+    "filter_models_dir": "./components/filter_models",
+    "biophysical_neuron_models_dir": "./components/biophysical_neuron_templates",
+    "mechanisms_dir": "./components/mechanisms",
+    "synaptic_models_dir": "./components/synaptic_models",
+    "morphologies_dir": "./components/morphologies",
+    "point_neuron_models_dir": "./components/point_neuron_models"
+  },
+  "output": {
+    "log_file": "./output_apicalsynapses/log.txt",
+    "output_dir": "./output_apicalsynapses",
+    "spikes_file": "./output_apicalsynapses/spikes.h5",
+    "spikes_file_csv": "./output_apicalsynapses/spikes.csv"
+  },
+  "reports": {
+    "cortical_electrode": {
+      "cells": "all",
+      "variable_name": "v",
+      "module": "extracellular",
+      "electrode_positions": "./components/electrodes/linear_electrode.csv",
+      "electrode_channels": "all"
+    }
+  },
+  "networks": {
+    "nodes": [
+      {
+        "nodes_file": "./network_apicalsynapses/cortcol_nodes.h5",
+        "node_types_file": "./network_apicalsynapses/cortcol_node_types.csv"
+      },
+      {
+        "nodes_file": "./network_apicalsynapses/external_nodes.h5",
+        "node_types_file": "./network_apicalsynapses/external_node_types.csv"
+      }
+    ],
+    "edges": [
+      {
+        "edge_types_file": "./network_apicalsynapses/cortcol_cortcol_edge_types.csv",
+        "edges_file": "./network_apicalsynapses/cortcol_cortcol_edges.h5"
+      },
+      {
+        "edge_types_file": "./network_apicalsynapses/external_cortcol_edge_types.csv",
+        "edges_file": "./network_apicalsynapses/external_cortcol_edges.h5"
+      }
+    ]
+  },
+  "config_path": "/Users/beatriz.herrera/Documents/GitHub/bmtk-workshop/Exercises/Exercise_5/config.lfp_apical.json",
+  "config_dir": "/Users/beatriz.herrera/Documents/GitHub/bmtk-workshop/Exercises/Exercise_5"
+}
