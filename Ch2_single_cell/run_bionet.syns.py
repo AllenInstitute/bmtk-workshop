@@ -17,4 +17,4 @@ if __name__ == '__main__':
     if __file__ != sys.argv[-1]:
         run(sys.argv[-1])
     else:
-        run('/home/shared/bmtk-workshop/Ch2_single_cell/config.with_syns.json')
+        run('/home/student/workshop/bmtk-workshop/Ch2_single_cell/config.with_syns.json')
