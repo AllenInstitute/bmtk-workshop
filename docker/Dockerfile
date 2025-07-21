@@ -1,12 +1,12 @@
 FROM continuumio/miniconda3:latest
 
-RUN apt-get -y update && apt-get install -y automake \
+RUN apt-get -y update && apt-get install -y automake        \
                                             build-essential \
-                                            git
+                                            git \
+                                            libpthread-stubs0-dev
 
-
-ENV GIT_BRANCH=update/workshop-2024
-ENV GIT_REPO=https://github.com/kaeldai/bmtk.git
+ARG WORKSHOP_REPO=https://github.com/AllenInstitute/bmtk-workshop.git
+ARG WORKSHOP_BRANCH=main
 
 ENV BUILD_DIR=/home/build
 ENV HOME_DIR=/home/shared
@@ -16,31 +16,32 @@ RUN mkdir -p ${BUILD_DIR}
 RUN mkdir -p ${HOME_DIR}
 RUN mkdir -p ${WORK_DIR}
 
-RUN apt-get install -y libgsl-dev
-RUN conda install conda-forge::nest-simulator
 
-RUN pip install neuron
+WORKDIR ${BUILD_DIR}
 
-RUN conda install jupyterlab
+COPY conda_env.bmtk-py311.yml .
 
-RUN pip install scikit-image
+# Install prereqs to run jupyter
+RUN conda env create -f conda_env.bmtk-py311.yml
 
-RUN pip install neo 
 
-RUN pip install quantities
+# Disable login req. when running jupyter in docker image.
+RUN mkdir -p /root/.jupyter
+RUN echo "c.NotebookApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py
 
-RUN cd ${BUILD_DIR} \
-    && git clone --branch ${GIT_BRANCH} ${GIT_REPO} \
-    && cd bmtk \
-    && python setup.py install
 
+SHELL ["conda", "run", "-n", "bmtk-py3.11", "/bin/bash", "-c"]
+
+
+# Install Workshop tutorials
 RUN cd ${HOME_DIR}; \
-    git clone --branch updates/2024-add-tuts https://github.com/kaeldai/bmtk-workshop.git
+    git clone --branch ${WORKSHOP_BRANCH} ${WORKSHOP_REPO}
 
-COPY setup_env.sh ${HOME_DIR}/bmtk-workshop
-RUN chmod +x ${HOME_DIR}/bmtk-workshop/setup_env.sh && cd ${HOME_DIR}/bmtk-workshop && ./setup_env.sh
 
-COPY entry_script.sh ${BUILD_DIR}
-RUN chmod +x ${BUILD_DIR}/entry_script.sh
-ENTRYPOINT ["/home/build/entry_script.sh"]
+# Required for running nestml, requires shared library but only finds static one.
+RUN ln -s $CONDA_PREFIX/x86_64-conda-linux-gnu/sysroot/lib64/libpthread.so.0 $CONDA_PREFIX/x86_64-conda-linux-gnu/sysroot/usr/lib/libpthread.so
 
+
+# Run jupyter lab server in the conda-environment when docker image is ran
+EXPOSE 8888
+CMD ["conda", "run", "--no-capture-output", "-n", "bmtk-py3.11", "jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''", "--notebook-dir='/home/shared/bmtk-workshop'"]
