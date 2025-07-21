@@ -21,4 +21,4 @@ dependencies:
     - neuron==8.2.7
     - neo==0.13.1
     - bokeh==3.7.3
-  
+    - panel==1.7.0
