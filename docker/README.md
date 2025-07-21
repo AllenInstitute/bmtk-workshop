@@ -1,38 +1,51 @@
 ### Building the image
 
 ```bash
-$ docker build -t workshop-2024 .
+$ docker build -t bmtk-workshop .
 ```
 
 ### Running the container
 
 ```bash
-$ docker run -p <client-port>:8888 workshop-2024
+$ docker run -p <client-port>:8888 bmtk-workshop
 ```
+
+Where *<client_port>* is an available port on your host machine (for most cases you can set it to 8888, or above if you're already running a jupyter instance).
+
+Then open a browser of your choice and go to link http://127.0.0.1:8888/lab (or whatever client-port you choose), and you should see jupyter lab
+running with all the workshop materials. **NOTE:** any changes you make will be lost when the docker image is shut down; to have the workshop
+notebooks persist on your local machine you will need to run with the `-v` option described below.
+
+
 
 
 ### How to use docker image to edit local version of the bmtk-workshop
 
-1. You can either make a fork of the [updates/2024-add-tuts](https://github.com/AllenInstitute/bmtk-workshop/tree/updates/2024-add-tuts) branch
+1. You can either make a fork of the [updates/2025](https://github.com/AllenInstitute/bmtk-workshop/tree/updates/2025) branch
 of bmtk-workshop in github into your own repo. Then clone it into your own machine
+
 ```bash
- $ git clone --branch updates/2024-add-tuts https://github.com/AllenInstitute/bmtk-workshop.git
+ $ git clone --branch updates/2025 https://github.com/AllenInstitute/bmtk-workshop.git
  $ cd bmtk-workshop
  ```
 
 2. Next step is to build the docker image. The first time you do it it may take a bit of time, be patient
+
 ```bash
  $ cd docker/
  $ docker build -t workshop-2024 .
 ```
+
 This will create a docker image with NEURON, NEST, and a special [bmtk of branch](https://github.com/kaeldai/bmtk/tree/update/workshop-2024) that includes
 some required changes to run new tutorials.
 
 3. Startup a docker container using the built `workshop-2024` image 
+
 ```bash
 $ cd .. # eg path to where bmtk-workshop was cloned into
 $ docker run -v $(pwd):/home/shared/bmtk-workshop -p 9001:8888 workshop-2024
 ```
+
 About these option
 * The `-v $(pwd)::/home/shared/bmtk-workshop` says that you will share the current working director `pwd` with the docker container
 * The `-p 9001:8888` means that even though inside the docker container jupyter-lab is using port `8888`, on you're computer it is using port `9001` (you can change this value to use a different port number)
