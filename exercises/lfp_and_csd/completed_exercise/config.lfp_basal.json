@@ -22,7 +22,7 @@
     "virt_exc_spikes": {
       "input_type": "spikes",
       "module": "sonata",
-      "input_file": "$BASE_DIR/inputs/virt_spikes.h5",
+      "input_file": "$BASE_DIR/inputs/lgn_spikes.h5",
       "node_set": "external"
     }
   },

@@ -1,8 +1,8 @@
 {
   "manifest": {
     "$BASE_DIR": ".",
-    "$OUTPUT_DIR": "$BASE_DIR/output_allsynapses",
-    "$NETWORK_DIR": "$BASE_DIR/network_allsynapses",
+    "$OUTPUT_DIR": "$BASE_DIR/output_apicalsynapses",
+    "$NETWORK_DIR": "$BASE_DIR/network_apicalsynapses",
     "$COMPONENTS_DIR": "$BASE_DIR/components"
   },
   "target_simulator": "NEURON",

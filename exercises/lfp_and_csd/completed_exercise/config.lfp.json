@@ -1,8 +1,8 @@
 {
   "manifest": {
     "$BASE_DIR": ".",
-    "$OUTPUT_DIR": "$BASE_DIR/output_apicalsynapses",
-    "$NETWORK_DIR": "$BASE_DIR/network_apicalsynapses",
+    "$OUTPUT_DIR": "$BASE_DIR/output_allsynapses",
+    "$NETWORK_DIR": "$BASE_DIR/network_allsynapses",
     "$COMPONENTS_DIR": "$BASE_DIR/components"
   },
   "target_simulator": "NEURON",
@@ -22,7 +22,7 @@
     "virt_exc_spikes": {
       "input_type": "spikes",
       "module": "sonata",
-      "input_file": "$BASE_DIR/inputs/virt_spikes.h5",
+      "input_file": "$BASE_DIR/inputs/lgn_spikes.h5",
       "node_set": "external"
     }
   },
