@@ -1,4 +1,4 @@
-edge_type_id target_query source_query dynamics_params delay syn_weight model_template weight_function distance_range target_sections
-100 ei=='e' ei=='e' ExcToExc.json 2.0 3e-05 exp2syn set_syn_weight "[30.0, 150.0]" ['basal']
-101 ei=='i' ei=='e' ExcToInh.json 2.0 0.0006 exp2syn NULL "[0.0, 1e+20]" "['somatic', 'basal']"
-102 ei=='e' ei=='i' InhToExc.json 2.0 0.0002 exp2syn NULL "[0.0, 50.0]" "['somatic', 'basal']"
+edge_type_id target_query source_query weight_function delay distance_range syn_weight model_template target_sections dynamics_params
+100 ei=='e' ei=='e' set_syn_weight 2.0 "[30.0, 150.0]" 3e-05 exp2syn ['basal'] ExcToExc.json
+101 ei=='i' ei=='e' NULL 2.0 "[0.0, 1e+20]" 0.0006 exp2syn "['somatic', 'basal']" ExcToInh.json
+102 ei=='e' ei=='i' NULL 2.0 "[0.0, 50.0]" 0.0002 exp2syn "['somatic', 'basal']" InhToExc.json
