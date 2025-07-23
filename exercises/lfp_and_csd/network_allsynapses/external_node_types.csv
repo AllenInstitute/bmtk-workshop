@@ -1,3 +1,3 @@
-node_type_id model_template dynamics_params spatial_size model_type pop_name
-100 lgnmodel:tOFF_TF15 tOFF_TF15.json 1.0 virtual tOFF
-101 lgnmodel:tON tON_TF8.json 1.0 virtual tON
+node_type_id model_type pop_name spatial_size model_template dynamics_params
+100 virtual tOFF 1.0 lgnmodel:sOFF_TF8 sOFF_TF8.json
+101 virtual tON 1.0 lgnmodel:sON_TF8 sON_TF8.json

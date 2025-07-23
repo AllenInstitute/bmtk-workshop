@@ -1,7 +1,4 @@
-edge_type_id target_query source_query target_sections model_template dynamics_params distance_range delay syn_weight
-100 ei=='e' ei=='e' "['somatic', 'basal']" Exp2Syn AMPA_ExcToExc.json "[2.0, 1e+20]" 0.5 0.006
-101 ei=='i' ei=='e' "['somatic', 'basal']" Exp2Syn AMPA_ExcToInh.json "[0.0, 1e+20]" 3.0 0.002
-102 ei=='e' ei=='i' "['somatic', 'basal']" Exp2Syn GABA_InhToExc.json "[0.0, 50.0]" 2.0 0.0002
-103 ei=='e' ei=='e' "['somatic', 'basal']" Exp2Syn AMPA_ExcToExc.json "[2.0, 1e+20]" 0.5 0.006
-104 ei=='i' ei=='e' "['somatic', 'basal']" Exp2Syn AMPA_ExcToInh.json "[0.0, 1e+20]" 3.0 0.002
-105 ei=='e' ei=='i' "['somatic', 'basal']" Exp2Syn GABA_InhToExc.json "[0.0, 50.0]" 2.0 0.0002
+edge_type_id target_query source_query weight_function delay distance_range syn_weight model_template target_sections dynamics_params
+100 ei=='e' ei=='e' set_syn_weight 2.0 "[30.0, 150.0]" 3e-05 exp2syn ['basal'] ExcToExc.json
+101 ei=='i' ei=='e' NULL 2.0 "[0.0, 1e+20]" 0.0006 exp2syn "['somatic', 'basal']" ExcToInh.json
+102 ei=='e' ei=='i' NULL 2.0 "[0.0, 50.0]" 0.0002 exp2syn "['somatic', 'basal']" InhToExc.json
