@@ -1,0 +1,25 @@
+name: bmtk-py3.11
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyterlab=4.4.4
+  - nest-simulator=3.8
+  - mpi=1.0=openmpi
+  - mpi4py=4.1.0
+  - cxx-compiler
+  - glib
+  - boost
+  - boost-cpp
+  - cmake
+  - make
+  - pip:
+    - bmtk
+    - nestml==8.0.2
+    - allensdk==2.16.2
+    - quantities==0.16.2
+    - neuron==8.2.7
+    - neo==0.13.1
+    - bokeh==3.7.3
+  

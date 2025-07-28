@@ -1,0 +1,3 @@
+edge_type_id target_query source_query delay distance_range syn_weight model_template target_sections dynamics_params
+100 ei=='e' * 2.0 "[0.0, 1e+20]" 0.0003 exp2syn "['basal', 'apical', 'somatic']" LGN_ExcToExc.json
+101 ei=='i' * 2.0 "[0.0, 1e+20]" 0.002 exp2syn "['basal', 'apical']" LGN_ExcToInh.json

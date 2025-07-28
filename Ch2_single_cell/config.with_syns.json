@@ -1,6 +1,6 @@
 {
   "manifest": {
-    "$BASE_DIR": "/home/shared/bmtk-workshop/Ch2_single_cell",
+    "$BASE_DIR": "/home/student/workshop/bmtk-workshop/Ch2_single_cell",
     "$OUTPUT_DIR": "$BASE_DIR/output_syns",
     "$NETWORK_DIR": "$BASE_DIR/network",
     "$COMPONENTS_DIR": "$BASE_DIR/components"
@@ -33,14 +33,13 @@
     }
   },
   "components": {
-    "mechanisms_dir": "$COMPONENTS_DIR/mechanisms",
+    "synaptic_models_dir": "$COMPONENTS_DIR/synaptic_models",
     "point_neuron_models_dir": "$COMPONENTS_DIR/point_neuron_models",
     "biophysical_neuron_models_dir": "$COMPONENTS_DIR/biophysical_neuron_models",
     "filter_models_dir": "$COMPONENTS_DIR/filter_models",
-    "__pycache___dir": "$COMPONENTS_DIR/__pycache__",
-    "morphologies_dir": "$COMPONENTS_DIR/morphologies",
-    "synaptic_models_dir": "$COMPONENTS_DIR/synaptic_models",
-    "templates_dir": "$COMPONENTS_DIR/templates"
+    "templates_dir": "$COMPONENTS_DIR/templates",
+    "mechanisms_dir": "$COMPONENTS_DIR/mechanisms",
+    "morphologies_dir": "$COMPONENTS_DIR/morphologies"
   },
   "output": {
     "log_file": "log.txt",
@@ -58,22 +57,22 @@
   "networks": {
     "nodes": [
       {
+        "node_types_file": "$NETWORK_DIR/virt_inh_node_types.csv",
+        "nodes_file": "$NETWORK_DIR/virt_inh_nodes.h5"
+      },
+      {
+        "nodes_file": "$NETWORK_DIR/cell_nodes.h5",
+        "node_types_file": "$NETWORK_DIR/cell_node_types.csv"
+      },
+      {
         "nodes_file": "$NETWORK_DIR/virt_exc_nodes.h5",
         "node_types_file": "$NETWORK_DIR/virt_exc_node_types.csv"
-      },
-      {
-        "nodes_file": "$NETWORK_DIR/virt_inh_nodes.h5",
-        "node_types_file": "$NETWORK_DIR/virt_inh_node_types.csv"
-      },
-      {
-        "node_types_file": "$NETWORK_DIR/cell_node_types.csv",
-        "nodes_file": "$NETWORK_DIR/cell_nodes.h5"
       }
     ],
     "edges": [
       {
-        "edges_file": "$NETWORK_DIR/virt_exc_cell_edges.h5",
-        "edge_types_file": "$NETWORK_DIR/virt_exc_cell_edge_types.csv"
+        "edge_types_file": "$NETWORK_DIR/virt_exc_cell_edge_types.csv",
+        "edges_file": "$NETWORK_DIR/virt_exc_cell_edges.h5"
       },
       {
         "edge_types_file": "$NETWORK_DIR/virt_inh_cell_edge_types.csv",

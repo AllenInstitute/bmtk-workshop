@@ -1,5 +1,6 @@
 **/__pycache__/
 **/x86_64/*
+**/arm64/*
 **/.ipynb_checkpoints/
 **/movies/
 **/boc/

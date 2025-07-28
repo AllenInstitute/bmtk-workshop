@@ -1,0 +1,78 @@
+{
+  "manifest": {
+    "$BASE_DIR": ".",
+    "$NETWORK_DIR": "$BASE_DIR/network",
+    "$COMPONENTS_DIR": "$BASE_DIR/components",
+    "$OUTPUT_DIR": "$BASE_DIR/output",
+    "$BKG_DIR": "$BASE_DIR/bkg_inputs",
+    "$LGN_DIR": "$BASE_DIR/lgn_stimulus"
+  },
+
+  "run": {
+    "duration": 3000.0,
+    "dt": 0.25
+  },
+
+  "inputs": {
+    "LGN_spikes": {
+      "input_type": "spikes",
+      "module": "h5",
+      "input_file": "$LGN_DIR/results/full3_GScorrected_PScorrected_3.0sec_SF0.04_TF2.0_ori270.0_c100.0_gs0.5/spikes.trial_0.h5",
+      "node_set": "lgn"
+    },
+    "BKG_spikes": {
+      "input_type": "spikes",
+      "module": "h5",
+      "input_file": "$BKG_DIR/results/bkg_spikes_n1_fr1000_dt0.25/spikes.trial_0.h5",
+      "node_set": "bkg"
+    }
+  },
+
+  "output": {
+    "log_file": "log.txt",
+    "spikes_file": "spikes.h5",
+    "spikes_file_csv": "spikes.csv",
+    "output_dir": "$OUTPUT_DIR",
+    "overwrite_output_dir": true,
+    "quiet_simulator": true
+  },
+
+  "target_simulator":"NEST",
+
+  "components": {
+    "point_neuron_models_dir": "$COMPONENTS_DIR/cell_models/nest_models",
+    "synaptic_models_dir": "$COMPONENTS_DIR/synaptic_models"
+  },
+
+  "networks": {
+    "nodes": [
+      {
+        "nodes_file": "$NETWORK_DIR/v1_nodes.h5",
+        "node_types_file": "$NETWORK_DIR/v1_node_types.csv"
+      },
+      {
+        "nodes_file": "$NETWORK_DIR/lgn_nodes.h5",
+        "node_types_file": "$NETWORK_DIR/lgn_node_types.csv"
+      },
+      {
+        "nodes_file": "$NETWORK_DIR/bkg_nodes.h5",
+        "node_types_file": "$NETWORK_DIR/bkg_node_types.csv"
+      }
+    ],
+    "edges": [
+      {
+        "edges_file": "$NETWORK_DIR/v1_v1_edges.h5",
+        "edge_types_file": "$NETWORK_DIR/v1_v1_edge_types.csv"
+      },
+      {
+        "edges_file": "$NETWORK_DIR/lgn_v1_edges.h5",
+        "edge_types_file": "$NETWORK_DIR/lgn_v1_edge_types.csv"
+      },
+      {
+        "edges_file": "$NETWORK_DIR/bkg_v1_edges.h5",
+        "edge_types_file": "$NETWORK_DIR/bkg_v1_edge_types.csv"
+      }
+
+    ]
+  }
+}
