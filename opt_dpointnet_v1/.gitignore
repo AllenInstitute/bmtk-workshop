@@ -1,0 +1,25 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Large network files and generated outputs intentionally excluded from this lightweight repo
+GLIF_network/*
+!GLIF_network/components/
+!GLIF_network/components/**
+GLIF_network/components/synaptic_models_updated/
+GLIF_network/network/
+GLIF_network_l4_cutout/
+lgn_cache/
+figures/
+output*/
+callbacks_outputs/
+training_callbacks*/
+*.h5
+*.hdf5
+*.pkl
+
+# OS/editor noise
+.DS_Store
+._*
+.vscode/
