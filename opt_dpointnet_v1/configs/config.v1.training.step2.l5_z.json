@@ -224,7 +224,7 @@
   },
   "components": {
     "point_neuron_models_dir": "$MODELS_DIR/cell_models",
-    "synaptic_models_dir": "$MODELS_DIR/synaptic_models_updated"
+    "synaptic_models_dir": "$MODELS_DIR/synaptic_models"
   },
   "networks": {
     "nodes": [

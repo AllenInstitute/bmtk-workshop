@@ -99,6 +99,7 @@ def create_l4_cutout_network(source_dir="GLIF_network/network", target_dir="GLIF
     selected_v1_ids = metadata.loc[v1_mask, "node_id"].astype(np.int64).to_numpy()
     if len(selected_v1_ids) == 0:
         raise ValueError(f"No L4 neurons found within radius {radius}")
+    v1_id_map = {old_id: new_id for new_id, old_id in enumerate(selected_v1_ids)}
 
     def copy_dataset(source_group, target_group, name, data):
         dataset = target_group.create_dataset(name, data=data, dtype=source_group[name].dtype)
@@ -109,7 +110,8 @@ def create_l4_cutout_network(source_dir="GLIF_network/network", target_dir="GLIF
         source_props = source_v1["0"]
         v1_group = target_h5.create_group("nodes/v1")
         props_group = v1_group.create_group("0")
-        for name in ["node_id", "node_type_id", "node_group_id"]:
+        copy_dataset(source_v1, v1_group, "node_id", np.arange(len(selected_v1_ids), dtype=source_v1["node_id"].dtype))
+        for name in ["node_type_id", "node_group_id"]:
             copy_dataset(source_v1, v1_group, name, source_v1[name][:][v1_mask])
         copy_dataset(source_v1, v1_group, "node_group_index", np.arange(len(selected_v1_ids), dtype=source_v1["node_group_index"].dtype))
         for name in ["target_sizes", "tuning_angle", "x", "y", "z"]:
@@ -137,7 +139,14 @@ def create_l4_cutout_network(source_dir="GLIF_network/network", target_dir="GLIF
 
             target_edges = target_h5.create_group(f"edges/{edge_population}")
             target_props = target_edges.create_group("0")
-            for name in ["source_node_id", "target_node_id", "edge_type_id", "edge_group_id"]:
+            remapped_targets = np.array([v1_id_map[node_id] for node_id in target_ids[edge_mask]], dtype=edge_group["target_node_id"].dtype)
+            copy_dataset(edge_group, target_edges, "target_node_id", remapped_targets)
+            if filter_source:
+                remapped_sources = np.array([v1_id_map[node_id] for node_id in source_ids[edge_mask]], dtype=edge_group["source_node_id"].dtype)
+                copy_dataset(edge_group, target_edges, "source_node_id", remapped_sources)
+            else:
+                copy_dataset(edge_group, target_edges, "source_node_id", edge_group["source_node_id"][:][edge_mask])
+            for name in ["edge_type_id", "edge_group_id"]:
                 copy_dataset(edge_group, target_edges, name, edge_group[name][:][edge_mask])
             copy_dataset(edge_group, target_edges, "edge_group_index", np.arange(int(edge_mask.sum()), dtype=edge_group["edge_group_index"].dtype))
             for name in edge_group["0"].keys():
