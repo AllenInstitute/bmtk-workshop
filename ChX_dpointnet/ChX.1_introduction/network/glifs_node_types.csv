@@ -1,0 +1,3 @@
+node_type_id dynamics_params ei pop_name model_template model_type
+100 354833767_glif_lif_asc_config.json e e4Nr5a1 glif_psc_double_alpha point_neuron
+101 501570114_glif_lif_asc_config.json i i4Vip glif_psc_double_alpha point_neuron

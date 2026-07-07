@@ -6,6 +6,7 @@
 **/boc/
 **/bob_images/
 **/output*/
+**/callbacks_outputs*/
 .idea
 dist/*
 .DS_Store
