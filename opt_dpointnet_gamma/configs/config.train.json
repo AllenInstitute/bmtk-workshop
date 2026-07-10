@@ -1,0 +1,118 @@
+{
+  "manifest": {
+    "$BASE_DIR": "net",
+    "$OUTPUT_DIR": "$BASE_DIR/output",
+    "$NETWORK_DIR": "$BASE_DIR/network",
+    "$MODELS_DIR": "$BASE_DIR/components"
+  },
+
+  "target_simulator": "RNN",
+
+  "run": {
+    "seq_len": 500,
+    "dt": 1.0,
+    "__comment_batch": "USER-SETTABLE. Each item is an independent background realization; averaging the gradient over the batch is what stabilizes training. Approx GPU peak (500 ms rollout, full BPTT): batch 8 ~5 GB, batch 16 ~8-9 GB, batch 32 ~15.7 GB (32 measured; 8/16 linear estimates). Larger batch = smoother training, more memory.",
+    "batch_size": 32,
+    "t_start": 0.0,
+    "default_seed": 100,
+    "dtype": "float32"
+  },
+
+  "rnn_cell_params": {
+    "cell_model": "GLIF3Cell",
+    "gauss_std": 0.5,
+    "dampening_factor": 0.3,
+    "recurrent_dampening_factor": 0.5,
+    "voltage_gradient_dampening": 0.5,
+    "recurrent_weight_scale": 1.0,
+    "lr_scale": 1.0,
+    "max_delay": 8,
+    "pseudo_gauss": false,
+    "hard_reset": false,
+    "tau_basis": [0.5, 2.46621207433047, 12.164403991146798, 60.0]
+  },
+
+  "inputs": {
+    "drive_input": {
+      "node_set": "drive",
+      "input": "spikes",
+      "module": "poisson_spikes",
+      "firing_rate": 200.0
+    },
+    "bkg_input": {
+      "node_set": "bkg",
+      "input": "spikes",
+      "module": "poisson_spikes_internal",
+      "firing_rate": 2000.0,
+      "trainable": true
+    }
+  },
+
+  "initial_state": { "module": "zero_state" },
+
+  "training": {
+    "n_epochs": 30,
+    "steps_per_epoch": 1,
+    "training_approach": "single",
+    "learning_rate": 0.00033,
+    "optimizer": { "name": "adam", "epsilon": 1.0e-07, "clipnorm": 1.0 },
+    "initial_state": { "module": "zero_state" },
+    "callbacks": { "class": "Callbacks", "starting_epoch": 0, "verbose": "on_epoch" },
+    "parameters": [
+      {
+        "name": "gamma",
+        "inputs": ["drive_input", "bkg_input"],
+        "loss_functions": {
+          "gamma": {
+            "module": "GammaLoss",
+            "__comment_band": "USER-EDITABLE gamma window (40 +/- 10 Hz). With frame_len=200 @ dt=1ms the PSD is evaluated on a 5 Hz grid (0,5,10,...), so 30/50 align exactly with bin edges. The frequency the network can be trained toward is set by the I->E delay (build_net.DELAY_IE) + inhibitory decay (build_net.BASIS_INH); faster inhibition / shorter delay -> higher frequency (retune the delay AND this band together).",
+            "in_band": [30.0, 50.0],
+            "flanks": [[20.0, 30.0], [50.0, 60.0]],
+            "__comment_ref": "spectral_ref='full' compares in-band power to the WHOLE spectrum (penalizes power at all other frequencies -> a smoother, more monotonic training signal); 'flanks' compares only to the immediate shoulders above. 'flanks' entries are only used when spectral_ref='flanks' (and to locate the reported peak).",
+            "spectral_ref": "full",
+            "frame_len": 200,
+            "frame_step": 50,
+            "__comment_ngroups": "n_groups=1 => AVERAGE-FIRST (spectrum of the population mean = genuine coordination). n_groups>1 averages sub-group spectra (rewards per-cell regularity too).",
+            "n_groups": 1,
+            "pop": "all",
+            "__comment_rate": "Per-cell rates shaped by EMD toward a LOGNORMAL (median rate_median_hz, spread rate_sigma) => realistic sparse rates, curbs runaway >100 Hz cells and silent cells. rate_median_hz is USER-SETTABLE.",
+            "rate_dist_weight": 0.02,
+            "rate_median_hz": 10.0,
+            "rate_sigma": 0.6,
+            "t_skip_ms": 150
+          }
+        }
+      }
+    ]
+  },
+
+  "inference": {
+    "initial_state": { "module": "zero_state" },
+    "inputs": ["drive_input", "bkg_input"]
+  },
+
+  "output": {
+    "output_dir": "$OUTPUT_DIR",
+    "log_file": "log.txt",
+    "log_level": "INFO",
+    "spikes_file": "spikes.h5"
+  },
+
+  "components": {
+    "point_neuron_models_dir": "$MODELS_DIR/cell_models",
+    "synaptic_models_dir": "$MODELS_DIR/synaptic_models"
+  },
+
+  "networks": {
+    "nodes": [
+      { "nodes_file": "$NETWORK_DIR/stg_nodes.h5",   "node_types_file": "$NETWORK_DIR/stg_node_types.csv" },
+      { "nodes_file": "$NETWORK_DIR/drive_nodes.h5", "node_types_file": "$NETWORK_DIR/drive_node_types.csv" },
+      { "nodes_file": "$NETWORK_DIR/bkg_nodes.h5",   "node_types_file": "$NETWORK_DIR/bkg_node_types.csv" }
+    ],
+    "edges": [
+      { "edges_file": "$NETWORK_DIR/stg_stg_edges.h5",   "edge_types_file": "$NETWORK_DIR/stg_stg_edge_types.csv" },
+      { "edges_file": "$NETWORK_DIR/drive_stg_edges.h5", "edge_types_file": "$NETWORK_DIR/drive_stg_edge_types.csv" },
+      { "edges_file": "$NETWORK_DIR/bkg_stg_edges.h5",   "edge_types_file": "$NETWORK_DIR/bkg_stg_edge_types.csv" }
+    ]
+  }
+}

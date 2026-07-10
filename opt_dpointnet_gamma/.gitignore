@@ -1,0 +1,18 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Generated at run time (not committed to this lightweight repo)
+net/
+net_*/
+saved/
+_*.json
+*.h5
+*.hdf5
+*.pkl
+
+# OS / editor noise
+.DS_Store
+._*
+.vscode/
