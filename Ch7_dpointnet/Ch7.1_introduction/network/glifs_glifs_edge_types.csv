@@ -1,0 +1,5 @@
+edge_type_id target_query source_query model_template dynamics_params delay
+100 ei=='e' ei=='e' static_synapse glif_e2e.json 2.0
+101 ei=='i' ei=='e' static_synapse glif_e2i.json 2.0
+102 ei=='e' ei=='i' static_synapse glif_i2e.json 2.0
+103 ei=='i' ei=='i' static_synapse glif_i2i.json 2.0
