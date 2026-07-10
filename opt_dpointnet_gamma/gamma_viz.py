@@ -28,7 +28,7 @@ def raster(spikes_TN, is_exc, *, ax=None, t0=0, t1=None):
     ax.scatter(tt[ec] + t0, rows[ec], s=1.5, c=E_COLOR, marker="|", linewidths=0.5)
     ax.scatter(tt[~ec] + t0, rows[~ec], s=1.5, c=I_COLOR, marker="|", linewidths=0.5)
     ax.axhline(is_exc.sum(), color="k", lw=0.5, ls=":")   # E/I divider
-    ax.set(xlabel="time (ms)", ylabel="neuron (E top / I bottom)", xlim=(t0, t1))
+    ax.set(xlabel="time (ms)", ylabel="neuron (I top / E bottom)", xlim=(t0, t1))
     return ax
 
 
